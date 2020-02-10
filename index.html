@@ -63,7 +63,7 @@
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
 
-            if (prediction[0].className == "삼다수" && prediction[0].probability.toFixed(2) == 1.00) {
+            if (prediction[0].probability.toFixed(2) >= 0.60) {
                 labelContainer.childNodes[0].innerHTML = "it is water";
             } else {
 
